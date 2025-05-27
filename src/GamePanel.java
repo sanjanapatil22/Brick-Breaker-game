@@ -16,7 +16,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     private int col = 7;
     private int totalBricks = row * col;
     private Timer timer;
-    private int delay = 5; // game refresh speed in milliseconds
+    private int delay = 7; // game refresh speed in milliseconds
     private int playerX = 310; // paddles X position
 
     Random rand = new Random();
@@ -26,7 +26,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     private int ballPosY = 300 + rand.nextInt(100); // between 300 and 400
 
     // ball movement direction
-    private int ballDirX = -1;
+    private int ballDirX = -1; 
     private int ballDirY = -2;
 
     private MapGenerator map;
@@ -341,7 +341,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                 timer = new Timer(delay, this); // Re-create and assign
                 timer.start();// restart timer if stopped
                 stopBackgroundMusic(); // stop any previous instance
-                playBackgroundMusicStreaming("/Users/sanjanapatil/Documents/sanjana/cs/java/BrickBreakerGame/sounds/mixkit-dirty-thinkin-989.wav");
+                playBackgroundMusicStreaming(
+                        "/Users/sanjanapatil/Documents/sanjana/cs/java/BrickBreakerGame/sounds/mixkit-dirty-thinkin-989.wav");
                 repaint();
             }
         }
